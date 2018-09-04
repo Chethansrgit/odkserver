@@ -73,6 +73,17 @@ app.get("/gethwc/:id", hwcfunctions.caller.get_hwcall_byid);
 app.get("/getcase_users", csfunctions.caller.get_case_users);
 app.get("/img", pubfunctions.caller.getpubImg);
 
+              ///charts APIs
+
+//home
+app.post("/getBpNhByRange", reportDCfunc.report.getBpNhByRange);
+app.get("/getPreviousBpNhCount", reportDCfunc.report.getPreviousBpNhCount);
+app.post("/getBpByCategory", reportDCfunc.report.getBpByCategory);
+app.post("/getNhByCategory", reportDCfunc.report.getNhByCategory);
+app.post("/getBpNhByCategory", reportDCfunc.report.getBpNhByCategory);
+app.get("/getBpNhYearly", reportDCfunc.report.getBpNhYearly);
+
+
 //observer
 setInterval(hwcSyncfunc.func.syncallhwvdetails, 1000 * 60 * 1);
 setInterval(dcSyncfunc.func.syncformdailyusers, 1000 * 60 * 1);
